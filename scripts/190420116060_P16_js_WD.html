@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> WD_190420116060_javascript#6 </title>
+</head>
+<body>
+
+ <!--for resume information-->    
+
+    <H1> Resume Form </H1>
+
+    Fill up the given below resume form & When you click the Display button, 
+    the data you entered will be displayed in a pop-up window.
+
+    <FORM name=form1>
+        <P> <B> Name : </B>
+            <INPUT type=text name=yourname LENGTH="25">
+        </P>
+        <P> <B> Address: </B>
+            <INPUT type=text name=address LENGTH="30">
+        </P>
+        <P> <B> Phone: </B>
+            <INPUT name=phone LENGTH="15">
+        </P>
+        <P> <B> Your 10th percentage : </B>
+            <INPUT name=PEROFTEN   LENGTH="15">
+        </P>
+
+        <P> <B> Your 12th percentage : </B>
+            <INPUT name=PEROFTWELVE LENGTH="15">
+        </P>
+
+        <P> <B> Your CGPA : </B>
+            <INPUT name=cgpa LENGTH="15">
+        </P>
+        <P> <B> Your email-id :</B>
+            <INPUT type=text name=emailid LENGTH="60">
+        </p>
+        
+        <P>
+            <INPUT onclick=display(); type=button value=Display>
+        </P>
+    </FORM>
+    
+ <!--for display resume information on new window-->   
+ 
+ <SCRIPT language=JavaScript>
+
+    function display() {
+        DispWin = window.open('', 'NewWin', 'toolbar=no,status=no,width=400,height=200')
+        message =  "<LI><b> NAME : </b>" + document.form1.yourname.value;
+        message += "<LI><b> ADDRESS : </b>" + document.form1.address.value;
+        message += "<LI><b> PHONE : </b>" + document.form1.phone.value + "</UL>";
+        message += "<LI><b> 10TH PERSENTAGE : </b>" + document.form1.PEROFTEN .value + "</UL>";
+        message += "<LI><b> 12TH PERSENTAGE : </b>" + document.form1.PEROFTWELVE  .value + "</UL>";
+        message += "<LI><b> CGPA : </b>" + document.form1.cgpa  .value + "</UL>";
+        message += "<LI><b> EMAIL-ID : </b>" + document.form1.emailid  .value + "</UL>";
+        
+        DispWin.document.write(message);
+    }
+</SCRIPT>
+</body>
+</html>
